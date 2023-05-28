@@ -21,9 +21,20 @@ def change (result):
     print (f'Данные контакта {result} изменены')
     print('\n')
 
-    def find_contact(contact):
+def find_contact(contact):
     with open('file.txt', 'r', encoding='utf-8') as file:
         date = file.read().split('\n')
         for i in date:
             if contact in i:
                 print(i)
+
+def delete (result):
+    with open('file.txt', 'r', encoding='utf-8') as file:
+        content = file.readlines()
+    with open('file.txt', 'w', encoding='utf-8') as file:
+        for line in content:
+            if line.strip('\n') != result:
+                file.write(line)
+    print('\n')
+    print (f'Контакт {result} удален')
+    print('\n')
