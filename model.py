@@ -20,3 +20,10 @@ def change (result):
     print('\n')
     print (f'Данные контакта {result} изменены')
     print('\n')
+
+    def find_contact(contact):
+    with open('file.txt', 'r', encoding='utf-8') as file:
+        date = file.read().split('\n')
+        for i in date:
+            if contact in i:
+                print(i)
